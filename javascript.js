@@ -1,12 +1,18 @@
 const emailList = document.getElementById("emailList");
 const api_url = "https://flynn.boolean.careers/exercises/api/random/mail";
 
-mailList = [];
+const randomMailList = () => {
+  emailList.innerHTML = "";
 
-const randomMailList = (mail) => {
   for (i = 0; i < 10; i++) {
-    axios
-      .get("https://flynn.boolean.careers/exercises/api/random/mail")
-      .then((response) => {});
+    axios.get(api_url).then((response) => {
+      console.log(response.data);
+      const email = response.data.response;
+      const li = document.createElement("li");
+      li.innerText = email;
+      emailList.appendChild(li);
+    });
   }
 };
+
+randomMailList();

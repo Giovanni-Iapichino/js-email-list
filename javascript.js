@@ -11,6 +11,7 @@ const randomMailList = () => {
       const email = response.data.response;
       const li = document.createElement("li");
       li.innerText = email;
+      li.classList.add("list-group-item");
       emailList.appendChild(li);
     });
   }

@@ -1,5 +1,6 @@
 const emailList = document.getElementById("emailList");
 const api_url = "https://flynn.boolean.careers/exercises/api/random/mail";
+const loadButton = document.getElementById("loadEmails");
 
 const randomMailList = () => {
   emailList.innerHTML = "";
@@ -14,5 +15,7 @@ const randomMailList = () => {
     });
   }
 };
+
+loadButton.addEventListener("click", randomMailList);
 
 randomMailList();
